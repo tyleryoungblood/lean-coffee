@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <span class="ionicons ion-coffee"></span> Lean Coffee!</a>
+  </div>
+ 
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div ng-controller="NavCtrl" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <form class="navbar-form navbar-left" 
+          role="search" 
+          ng-submit="submitTopic()"
+          ng-show="signedIn()">
+      <div class="form-group">
+        <p><input type="text" class="form-control" placeholder="Topic Title" ng-model="topic.title"></p>
+        <p><input type="text" class="form-control" placeholder="Description" ng-model="topic.description"></p>
+        <button type="submit" class="btn btn-default">Submit Topic</button>
+      </div>
+
+    </form>
+
+    <ul class="nav navbar-nav navbar-right" ng-show="signedIn()">
+      <!-- show username and gravatar if signed in -->
+      <li>
+        <a href="#/users/{{ currentUser.username }}">
+          <img src="http://www.gravatar.com/avatar/{{ currentUser.md5_hash }}" class="nav-pic">
+        </a>
+      </li>
+      <li>
+        <a href="#" ng-click="logout()">Logout</a>
+      </li>
+    </ul>
+    <!-- add register and logout links when user is not signed into app -->
+    <ul class="nav navbar-nav navbary-right" ng-hide="signedIn()">
+      <li>
+        <a href="#/register">Register</a>
+      </li>
+      <li>
+        <a href="#/login">Log In</a>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
