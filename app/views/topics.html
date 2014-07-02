@@ -1,4 +1,13 @@
 <div class="container topics-page">
+
+<h3>Instructions</h3>
+<ol>
+  <li>Log In (or Register)</li>
+  <li>Create a new topic</li>
+  <li>Vote on up to 3 topics you'd like to discuss</li>
+</ol>
+
+<h3>Topics</h3>
  
   <div class="topic row" ng-repeat="(topicId, topic) in topics">
     <div class="col-xs-1">
@@ -19,9 +28,7 @@
         <a href="#/topics/{{ topicId }}">
           {{ topic.title }}
         </a>
-         | <a href="#/topics/{{ topicId }}">
-              <span class="ionicons ion-chatboxes"></span>
-           </a>
+         | <a href="#/topics/{{ topicId }}"><span class="ionicons ion-chatboxes"></span></a>
          | <a ng-click="deleteTopic(topicId)" 
               ng-show="signedIn() && topic.owner === currentUser.username">
               <span class="ionicons ion-trash-b"></span>
