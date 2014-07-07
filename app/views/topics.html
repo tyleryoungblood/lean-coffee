@@ -9,27 +9,27 @@
 
 <h3>Topics</h3>
  
-  <div class="topic row" ng-repeat="(topicId, topic) in topics">
+  <div class="topic row" ng-repeat="(topicId, topic) in topics | orderByPriority | orderBy:'-score'">
     <div class="col-xs-1">
       <div class="vote up">
         <span ng-hide="downVoted(topic)" 
-              ng-click="upVoteTopic(topicId, upVoted(topic))">▲</span>
+              ng-click="upVoteTopic(topic.$id, upVoted(topic))">▲</span>
       </div>
      
       <div class="vote down">
         <span ng-hide="upVoted(topic)" 
-              ng-click="downVoteTopic(topicId, downVoted(topic))">▼</span>
+              ng-click="downVoteTopic(topic.$id, downVoted(topic))">▼</span>
       </div>
     </div>
     <div class="col-md-9 col-xs-11">
  
       <div class="info">
 
-        <a href="#/topics/{{ topicId }}">
+        <a href="#/topics/{{ topic.$id }}">
           {{ topic.title }}
         </a>
-         | <a href="#/topics/{{ topicId }}"><span class="ionicons ion-chatboxes"></span></a>
-         | <a ng-click="deleteTopic(topicId)" 
+         | <a href="#/topics/{{ topic.$id }}"><span class="ionicons ion-chatboxes"></span></a>
+         | <a ng-click="deleteTopic(topic.$id)" 
               ng-show="signedIn() && topic.owner === currentUser.username">
               <span class="ionicons ion-trash-b"></span>
            </a>

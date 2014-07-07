@@ -15,6 +15,7 @@ app.factory('Topic',
 					var user = User.getCurrent();
 
 					topic.owner = user.username;
+					topic.score = 0;
 
 					return topics.$add(topic).then(function (ref) {
 						var topicId = ref.name();
