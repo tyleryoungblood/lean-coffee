@@ -9,17 +9,12 @@
 
 <h3>Topics</h3>
  
-  <div class="topic row" ng-repeat="(topicId, topic) in topics | orderByPriority | orderBy:'-score'">
+  <div class="topic row" ng-repeat="(topicId, topic) in topics | orderByPriority | orderBy:'-score'"> <!-- orderByPriority turns each topic into an array (instead of an object) and creates an array item for topicId called topic.$id -->
     <div class="col-xs-1">
       <div class="vote up">
-        <span ng-hide="downVoted(topic)" 
-              ng-click="upVoteTopic(topic.$id, upVoted(topic))">▲</span>
+        <span ng-click="upVoteTopic(topic.$id, upVoted(topic))">▲</span>
       </div>
      
-      <div class="vote down">
-        <span ng-hide="upVoted(topic)" 
-              ng-click="downVoteTopic(topic.$id, downVoted(topic))">▼</span>
-      </div>
     </div>
     <div class="col-md-9 col-xs-11">
  
