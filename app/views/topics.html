@@ -9,7 +9,8 @@
 
 <h3>Topics</h3>
  
-  <div class="topic row" ng-repeat="(topicId, topic) in topics | orderByPriority | orderBy:'-score'"> <!-- orderByPriority turns each topic into an array (instead of an object) and creates an array item for topicId called topic.$id -->
+  <!-- add "user_has_upvoted" class if they are signedIn() && -->
+  <div class="topic row" ng-class="{user_has_upvoted : signedIn() && topic.upvotes !== users.username}" ng-repeat="(topicId, topic) in topics | orderByPriority | orderBy:'-score'"> <!-- orderByPriority turns each topic into an array (instead of an object) and creates an array item for topicId called topic.$id -->
     <div class="col-xs-1">
       <div class="vote up">
         <span ng-click="upVoteTopic(topic.$id, upVoted(topic))">▲</span>

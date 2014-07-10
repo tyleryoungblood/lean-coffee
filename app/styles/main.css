@@ -40,6 +40,10 @@ body {
   margin-left:5px;
 }
 
+.user_has_upvoted {
+  background: lightgreen;
+}
+
 
 /* PROFILE PAGE */
 .prof-img{
