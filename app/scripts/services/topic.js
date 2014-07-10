@@ -88,6 +88,8 @@ app.factory('Topic',
 			          return score + 1;
 			        });
 			      });
+			  } else {
+			  	window.alert('You Must Be Signed In To Vote');
 			  }
 			},
 			downVote: function (topicId) {
