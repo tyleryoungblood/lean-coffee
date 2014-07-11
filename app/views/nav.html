@@ -29,7 +29,7 @@
       <!-- show username and gravatar if signed in -->
       <li class="logout">
         <a href="#/users/{{ currentUser.username }}">
-          Hi {{ currentUser.username}}! <img src="http://www.gravatar.com/avatar/{{ currentUser.md5_hash }}" class="nav-pic">
+          Welcome {{ currentUser.username}}! <img src="http://www.gravatar.com/avatar/{{ currentUser.md5_hash }}" class="nav-pic">
           (<a href="#" ng-click="logout()">Logout</a>)
         </a>
       </li>
