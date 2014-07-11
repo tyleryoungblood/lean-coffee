@@ -27,13 +27,11 @@
 
     <ul class="nav navbar-nav navbar-right" ng-show="signedIn()">
       <!-- show username and gravatar if signed in -->
-      <li>
+      <li class="logout">
         <a href="#/users/{{ currentUser.username }}">
-          <img src="http://www.gravatar.com/avatar/{{ currentUser.md5_hash }}" class="nav-pic">
+          Hi {{ currentUser.username}}! <img src="http://www.gravatar.com/avatar/{{ currentUser.md5_hash }}" class="nav-pic">
+          (<a href="#" ng-click="logout()">Logout</a>)
         </a>
-      </li>
-      <li>
-        <a href="#" ng-click="logout()">Logout</a>
       </li>
     </ul>
     <!-- add register and logout links when user is not signed into app -->

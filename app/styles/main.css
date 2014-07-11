@@ -18,6 +18,15 @@ body {
   border-radius: 100px;
 }
 
+.nav .logout {
+  padding: 10px 0 0 10px;
+}
+
+.nav .logout a {
+  padding: 0;
+  display: inline-block;
+}
+
 
 /* MAIN TOPICS PAGE */
 .topic {
