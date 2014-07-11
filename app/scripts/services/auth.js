@@ -13,7 +13,6 @@ app.factory('Auth',
 			},
 
 			signedIn: function () {
-				console.log(auth);
 				return auth.user !== null;
 
 			}, 

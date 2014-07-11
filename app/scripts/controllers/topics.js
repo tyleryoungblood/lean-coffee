@@ -34,4 +34,5 @@ app.controller('TopicsCtrl', function ($scope, $location, Topic) {
 	$scope.downVoted = function (topic) {
 	  return Topic.downVoted(topic);
 	};
+
 });

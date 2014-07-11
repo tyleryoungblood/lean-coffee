@@ -15,6 +15,7 @@
         </a>
       </div>
       <div>
+        {{ topic.description }}<hr>
         <span>{{ topic.score || 0 }} votes</span> &mdash;
         <span>submitted by <a href="#/users/{{ topic.owner }}">{{ topic.owner }}</a></span>
       </div>
