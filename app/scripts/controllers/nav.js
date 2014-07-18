@@ -8,7 +8,7 @@ app.controller('NavCtrl', function($scope, $location, Topic, Auth) {
 
 	$scope.topics = Topic.all;
 
-	$scope.topic = {title: 'Topic Title', description: 'Description'};
+	$scope.topic = {title: '', description: ''};
 
 	$scope.submitTopic = function () {
 		Topic.create($scope.topic).then(function (topicId){
