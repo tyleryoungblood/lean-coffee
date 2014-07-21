@@ -1,6 +1,6 @@
 'use strict'; 
 
-app.controller('AccordionCtrl', function AccordionDemoCtrl($scope) {
+app.controller('AccordionCtrl', function AccordionCtrl($scope) {
     $scope.oneAtATime = true;
 
     $scope.groups = [

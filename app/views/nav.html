@@ -35,14 +35,19 @@
         </a>
       </li>
     </ul>
+
     <!-- add register and logout links when user is not signed into app -->
-    <ul class="nav navbar-nav navbary-right" ng-hide="signedIn()">
+    <ul class="nav navbar-nav navbar-right" ng-hide="signedIn()">
+      <li>
+        <a href="#/instructions">Instructions</a>
+      </li>
       <li>
         <a href="#/register">Register</a>
       </li>
       <li>
         <a href="#/login">Log In</a>
       </li>
+
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>

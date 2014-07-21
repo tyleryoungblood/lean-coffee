@@ -35,6 +35,11 @@ app.config(function ($routeProvider) {
         controller: 'AboutCtrl'
       })
 
+      .when('/instructions', {
+        templateUrl: 'views/instructions.html',
+        controller: ''
+      })
+
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'AuthCtrl'
