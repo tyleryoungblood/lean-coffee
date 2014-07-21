@@ -23,7 +23,8 @@
           ng-class="{'user_has_upvoted fa fa-thumbs-up': signedIn() && topic.upvotes[currentUser.username].localeCompare(currentUser.username) === 0}"
           ng-click="upVoteTopic(topic.$id, upVoted(topic))">
       </div>
-      <div class="tally">{{ topic.score || 0 }}</div>
+      <div  class="tally"
+            ng-show="topic.score >= 1">{{ topic.score || 0 }}</div>
     </div>
 
 
