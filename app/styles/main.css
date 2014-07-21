@@ -38,6 +38,27 @@ body {
   margin-bottom: 5px;
 }
 
+.vote {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 15px 0 0;
+}
+
+.tally {
+  font-size: 13px;
+  text-align: center;
+  background: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  position: relative;
+  top: -20px;
+  right: -15px;
+}
+
 .topic_summary {
   padding: 0;
 }
@@ -54,8 +75,25 @@ body {
   margin-left:5px;
 }
 
+.trash, .trash a {
+  font-size: 25px;
+  color: gray;
+}
+
+.trash a:hover {
+  color:red;
+}
+
 .user_has_upvoted {
   color: green;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }
 
 
@@ -77,26 +115,7 @@ body {
   margin-top:30px;
 }
 
-.vote {
-  font-size: 30px;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-}
 
-.tally {
-  font-size: 13px;
-  text-align: center;
-  background: red;
-  color: white;
-  width: 20px;
-  height: 20px;
-  border: 1px solid white;
-  border-radius: 10px;
-  position: relative;
-  top: -20px;
-  right: -15px;
-}
 
 .auth-forms {
   max-width:400px;
