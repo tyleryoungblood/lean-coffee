@@ -34,15 +34,20 @@ body {
   padding:15px;
   -moz-box-shadow: 0 0 5px rgba(0,0,0,0.2);
   -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  margin-bottom: 5px;
 }
 
-.info {
+.topic_summary {
+  padding: 0;
+}
+
+.topic_title {
   font-weight: bolder;
   font-size: 1.5em;
 }
 
-.info .url {
+.topic_title .url {
   font-weight: normal;
   color:#999;
   font-size:13px;
@@ -50,7 +55,7 @@ body {
 }
 
 .user_has_upvoted {
-  background: lightgreen;
+  color: green;
 }
 
 
@@ -73,8 +78,24 @@ body {
 }
 
 .vote {
-  height:20px;
+  font-size: 30px;
   cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.tally {
+  font-size: 13px;
+  text-align: center;
+  background: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  position: relative;
+  top: -20px;
+  right: -15px;
 }
 
 .auth-forms {
