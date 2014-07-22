@@ -50,6 +50,11 @@ app.config(function ($routeProvider) {
         controller: 'AuthCtrl'
       })
 
+      .when('/submit_topic', {
+        templateUrl: 'views/submit_topic.html',
+        controller: 'NavCtrl'
+      })
+
       .when('/topics/:topicId', {
         templateUrl: 'views/showtopic.html',
         controller: 'TopicViewCtrl'

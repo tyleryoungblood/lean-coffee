@@ -10,22 +10,6 @@ body {
 
 
 /* NAV BAR */
-.nav-pic {
-  margin: -2px 5px 0 0;
-  max-height: 20px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  border-radius: 100px;
-}
-
-.nav .logout {
-  padding: 10px 0 0 10px;
-}
-
-.nav .logout a {
-  padding: 0;
-  display: inline-block;
-}
 
 
 /* MAIN TOPICS PAGE */
@@ -101,9 +85,9 @@ body {
 .prof-img{
   width:100%;
   max-width:100px;
-  -webkit-border-radius: 100px;
+/*  -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
-  border-radius: 100px;
+  border-radius: 100px;*/
 }
 
 .name {

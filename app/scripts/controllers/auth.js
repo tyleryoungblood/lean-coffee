@@ -24,8 +24,7 @@ app.controller('AuthCtrl',
 				Auth.login($scope.user);
 				User.create(authUser, $scope.user.username);
 				$location.path('/');
-				console.log(authUser);
-				//auth.user = authUser;
+				
 			}, function (error) {
 				$scope.error = (error.toString()).replace('FirebaseSimpleLogin: FirebaseSimpleLogin: ', '');
 			});
