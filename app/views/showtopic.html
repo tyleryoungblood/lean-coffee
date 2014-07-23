@@ -1,31 +1,49 @@
 <div class="container topics-page">
  
   <div class="topic row">
-    <div class="col-xs-1">
-  <div class="vote up">
-    <span ng-click="upVoteTopic(upVoted())">▲</span>
+
+    <div class="vote left">
+
+      <div class=" fa fa-thumbs-o-up" 
+            ng-class="{'user_has_upvoted fa fa-thumbs-up': signedIn() && topic.upvotes[currentUser.username].localeCompare(currentUser.username) === 0}"
+            ng-click="upVoteTopic(topic.$id, upVoted(topic))">
+      </div>
+
+      <div  class="tally"
+            ng-show="topic.score >= 1">{{ topic.score || 0 }}
+      </div>
+
+    </div> <!-- vote left -->
+
+    <div class="topic_summary left">
+   
+        <div class="topic_title">
+          <a href="#/topics/{{ topic.$id }}">
+            {{ topic.title }}
+          </a>
+        </div>
+
+        <div class="topic_owner">
+          by <a href="#/users/{{ topic.owner }}">{{ topic.owner }}</a>
+           <a href="#/topics/{{ topic.$id }}"><!-- <span class="ionicons ion-chatboxes"> --></a>
+        </div>
+
+        <div  class="trash right"><a ng-click="deleteTopic(topic.$id)" 
+              ng-show="signedIn() && topic.owner === currentUser.username">
+                  <span class="ionicons ion-trash-b"></span></a>
+        </div>
+
+    </div> <!-- topic_summary -->
+
+  </div><br><!--  .topic row -->
+
+  <div ng-show="topic.description !== '' && topic.description !== 'Description'">
+    <h4>Description</h4>
+    <p>{{ topic.description }}</p><br>
   </div>
 
-    </div>
-    <div class="col-md-9 col-xs-11">
- 
-      <div class="info">
-        <a href="{{ topic.url }}">
-          {{ topic.title }}
-        </a>
-      </div>
-      <div>
-        {{ topic.description }}<hr>
-        <span>{{ topic.score || 0 }} votes</span> &mdash;
-        <span>submitted by <a href="#/users/{{ topic.owner }}">{{ topic.owner }}</a></span>
-      </div>
-    </div>
-    
-    <div class="col-md-2"></div>
- 
-  </div>
- 
- <div ng-repeat="(commentId, comment) in topic.comments" class="row cmt">
+  <h4>Comments</h4>
+  <div ng-repeat="(commentId, comment) in topic.comments" class="row cmt">
     <div class="col-md-12">
       <p>{{ comment.text }}</p>
       <p class="author">posted by 
@@ -37,7 +55,7 @@
       </p>
     </div>
   </div>
- 
+   
   <div class="cmt-form">
     <div ng-hide="signedIn()">
       <p><a href="#/login">Sign in</a> to post a comment</p>
@@ -48,7 +66,9 @@
       <input type="submit" ng-click="addComment()" value="Submit Comment" class="btn btn-primary" />
     </form>
   </div>
- 
-</div><br>
+   
+  <br>
 
-<a href="#topics">Back to Topics</a>
+  <a href="#topics">Back to Topics</a>
+
+</div> <!-- container -->

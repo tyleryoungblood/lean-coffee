@@ -26,7 +26,7 @@ app.config(function ($routeProvider) {
     $routeProvider
     
       .when('/', {
-        templateUrl: 'views/topics.html',
+        templateUrl: 'views/meeting.html',
         controller: 'TopicsCtrl'
       })
 
