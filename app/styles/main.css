@@ -152,3 +152,40 @@ h2, h2, h3, h4, h5, h6 {
   margin: 20px;
   background: #fff;
 }
+
+
+/* TRANSITIONS BETWEEN PAGES */
+[ng-view].ng-enter, [ng-view].ng-leave {
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+[ng-view].ng-enter {
+    opacity: 0;
+    -webkit-transition-delay: 0.4s;
+    -moz-transition-delay: 0.4s;
+    -ms-transition-delay: 0.4s;
+    -o-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+}
+
+[ng-view].ng-enter-active {
+    opacity: 1;
+}
+
+
+[ng-view].ng-leave {
+    opacity: 1;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+[ng-view].ng-leave-active {
+    opacity: 0;
+}
