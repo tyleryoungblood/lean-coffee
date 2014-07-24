@@ -1,15 +1,25 @@
-<div class="container topics-page">
+<div class="topics-page">
+	<section class="row">
 
-	<h3 class="fa fa-bullhorn"> Discussing</h3>
+		<div class="col-xs-12 col-sm-6">
+			<div class="">
+				<h3 class="fa fa-bullhorn"> Discussing</h3>
+				<div ng-include="'views/discussing.html'"></div>
+			</div>
+		
+			<div class="">
+				<h3 class="fa fa-lightbulb-o"> To Discuss</h3>
+				<div ng-include="'views/topics.html'"></div>
+			</div>
+		</div>
 
-		<div ng-include="'views/discussing.html'"></div>
+		<div class="col-xs-12 col-sm-6">
+			<div>
+				<h3 class="fa fa-check-square-o"> Discussed</h3>
+				<div ng-include="'views/discussed.html'"></div>
+			</div>
+		</div>
 
-	<h3 class="fa fa-lightbulb-o"> To Discuss</h3>
-
-		<div ng-include="'views/topics.html'"></div>
-
-	<h3 class="fa fa-check-square-o"> Discussed</h3>
-
-		<div ng-include="'views/discussed.html'"></div>
+	</section>
 
 </div> <!-- container -->

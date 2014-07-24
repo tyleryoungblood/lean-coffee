@@ -1,6 +1,6 @@
 body {
   background: #F3F3F3;
-  max-width: 600px;
+  max-width: 900px;
   margin: 10px auto;
 }
 
@@ -8,8 +8,11 @@ body {
   width: 100%;
 }
 
+.two-col-padding {
+
+}
+
 h2, h2, h3, h4, h5, h6 {
-  margin-left: -12px;
 }
 
 
@@ -27,6 +30,10 @@ h2, h2, h3, h4, h5, h6 {
   -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.2);
   box-shadow: 0 1px 6px rgba(0,0,0,0.5);
   margin-bottom: 5px;
+}
+
+.tab-pane > .topic {
+  box-shadow: none;
 }
 
 .profile_topic {
