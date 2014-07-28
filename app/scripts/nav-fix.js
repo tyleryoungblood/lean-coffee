@@ -1,3 +1,7 @@
+/*jshint unused: false, undef:false */
+/* global app:true */
+'use strict';
+
 /************************************************************
 * This js is used to fix the but with angular and bootstrap *
 * that causes the dropdown nav menu to remain open after a  *

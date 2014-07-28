@@ -13,7 +13,7 @@ app.controller('NavCtrl', function($scope, $location, Topic, Auth) {
 	$scope.topic = {title: '', description: ''};
 
 	$scope.submitTopic = function () {
-		Topic.create($scope.topic).then(function (topicId){
+		Topic.create($scope.topic).then(function (alert){
 			alert('Thanks! Your topic has been created!');
   			$location.path('/#');
  			$scope.topic = {url: 'http://', title: ''};
