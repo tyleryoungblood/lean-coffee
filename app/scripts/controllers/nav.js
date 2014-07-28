@@ -6,6 +6,8 @@ app.controller('NavCtrl', function($scope, $location, Topic, Auth) {
 		Auth.logout();
 	};
 
+	$scope.currentPath = $location.path(); //store the URL so I can hide back link in nav.html when on home page
+
 	$scope.topics = Topic.all;
 
 	$scope.topic = {title: '', description: ''};

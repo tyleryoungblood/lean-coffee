@@ -1,5 +1,4 @@
-
-  <!-- add "user_has_upvoted" class if they are signedIn() && -->
+<!-- add "user_has_upvoted" class if they are signedIn() && -->
   <div class="topic clearfix" ng-repeat="(topicId, topic) in topics | orderByPriority | orderBy:'-score'"> <!-- orderByPriority turns each topic into an array (instead of an object) and creates an array item for topicId called topic.$id -->
     
     <div class="vote left">
