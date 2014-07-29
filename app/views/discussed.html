@@ -1,3 +1,34 @@
-<div class="topic">
-	<p>Nothing has been discussed yet.</p>
-</div>
+<!-- add "user_has_upvoted" class if they are signedIn() && -->
+  <div class="topic clearfix" ng-repeat="topic in topics | orderByPriority | orderBy:'-score'" ng-if="topic.category=='discussed'"> <!-- orderByPriority turns each topic into an array (instead of an object) and creates an array item for topicId called topic.$id -->
+    
+    <div class="vote left">
+      <div  class=" fa fa-thumbs-o-up" 
+          ng-class="{'user_has_upvoted fa fa-thumbs-up': signedIn() && topic.upvotes[currentUser.username].localeCompare(currentUser.username) === 0}"
+          ng-click="upVoteTopic(topic.$id, upVoted(topic))">
+      </div>
+      <div  class="tally"
+            ng-show="topic.score >= 1">{{ topic.score || 0 }}
+      </div>
+    </div>
+
+
+    <div class="topic_summary left">
+ 
+      <div class="topic_title">
+        <a href="#/topics/{{ topic.$id }}">{{ topic.title }}</a>
+      </div>
+
+      <div class="topic_owner">
+        by <a href="#/users/{{ topic.owner }}">{{ topic.owner }}</a>
+      </div>
+
+    </div>
+
+    <div class="right"><button ng-click="moveToDiscussing(topic.$id)" ng-show="signedIn()"><i class="fa fa-arrow-right"></i> <i class="fa fa-lightbulb-o"></i></button> </div>
+
+    <div class="right"><button ng-click="deleteTopic(topic.$id)" 
+            ng-show="signedIn() && topic.owner === currentUser.username">
+                <i class="ionicons ion-trash-b"></i></button>&nbsp;
+    </div>
+   
+  </div><!-- topic row -->

@@ -47,8 +47,10 @@ app.factory('Topic',
 			}, 
 
 			moveToDiscussing: function(topicId) {
-				var topic = Topic.find(topicId);
-				topic.category = 'discussing';
+				var topic = topics.$child(topicId); // or the method below?
+				topic.set({
+					'category':'discussing'
+				});
 			},
 
 			moveToDiscussed: function(topicId) {
@@ -98,9 +100,10 @@ app.factory('Topic',
 			        topic.$child('score').$transaction(function (score) {
 			          if (!score) {
 			            return 1;
+			          }else{
+			          	return score + 1;
 			          }
 			 
-			          return score + 1;
 			        });
 			      });
 			  } else {

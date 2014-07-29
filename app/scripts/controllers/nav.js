@@ -1,4 +1,4 @@
-/*jshint unused: false, undef:false, devel:true*/
+/*jshint unused: false, undef:false*/
 'use strict'; 
 
 app.controller('NavCtrl', function($scope, $location, Topic, Auth) {
@@ -11,11 +11,11 @@ app.controller('NavCtrl', function($scope, $location, Topic, Auth) {
 
 	$scope.topics = Topic.all;
 
-	$scope.topic = {title: '', description: '', category: ''};
+	$scope.topic = {title: '', description: '', category: 'toDiscuss'};
 
 	$scope.submitTopic = function () {
 		Topic.create($scope.topic).then(function (){
-			alert('Thanks! Your topic has been created!');
+			window.alert('Thanks! Your topic has been created!');
   			$location.path('/#');
  			$scope.topic = {url: 'http://', title: ''};
 		});

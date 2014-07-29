@@ -28,7 +28,7 @@
 
     </div>
 
-    <div class="moveTopic right"><button ng-click="moveToDiscussing(topic.$id)" ng-show="signedIn()"><i class="fa fa-arrow-right"></i> <i class="fa fa-bullhorn"></i></button> </div>
+    <div class="right"><button ng-click="moveToDiscussing(topic.$id)" ng-show="signedIn()"><i class="fa fa-arrow-right"></i> <i class="fa fa-check-square-o"></i></button> </div>
 
     <div class="right"><button ng-click="deleteTopic(topic.$id)" 
             ng-show="signedIn() && topic.owner === currentUser.username">
