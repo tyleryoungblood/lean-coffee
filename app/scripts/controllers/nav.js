@@ -1,3 +1,4 @@
+/*jshint unused: false, undef:false */
 'use strict'; 
 
 app.controller('NavCtrl', function($scope, $location, Topic, Auth) {
@@ -6,14 +7,14 @@ app.controller('NavCtrl', function($scope, $location, Topic, Auth) {
 		Auth.logout();
 	};
 
-	$scope.currentPath = $location.path(); //store the URL so I can hide back link in nav.html when on home page
+	//$scope.currentPath = $location.path(); //store the URL so I can hide back link in nav.html when on home page
 
 	$scope.topics = Topic.all;
 
-	$scope.topic = {title: '', description: ''};
+	$scope.topic = {title: '', description: '', category: 'toDiscuss'};
 
 	$scope.submitTopic = function () {
-		Topic.create($scope.topic).then(function (alert){
+		Topic.create($scope.topic).then(function (){
 			alert('Thanks! Your topic has been created!');
   			$location.path('/#');
  			$scope.topic = {url: 'http://', title: ''};
