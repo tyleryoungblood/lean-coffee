@@ -17,10 +17,11 @@ function countDown(time, elementId) {
 
 	if(time < 1) {
 		//clearTimeout(timer);
-		element.innerHTML = 'Time has expired. <a href="" onclick="countDown(12, \'status\')">Restart?</a>';
+		element.innerHTML = 'Time has expired. <button onclick="countDown(5, \'status\')">Restart?</button>';
+	} else {
+		time--;
+		timer = setTimeout('countDown(' + time + ', "' + elementId + '")', 1000);
 	}
 
-	time--;
 
-	timer = setTimeout('countDown(' + time + ', "' + elementId + '")', 1000);
 }
