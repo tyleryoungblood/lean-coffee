@@ -46,6 +46,21 @@ app.factory('Topic',
 				}
 			}, 
 
+			moveToDiscussing: function(topicId) {
+				var topic = Topic.find(topicId);
+				topic.category = 'discussing';
+			},
+
+			moveToDiscussed: function(topicId) {
+				var topic = Topic.find(topicId);
+				topic.category = 'discussed';
+			},
+
+			moveToDiscuss: function(topicId) {
+				var topic = Topic.find(topicId);
+				topic.category = 'toDiscuss';
+			},
+
 			addComment: function (topicId, comment) {
 			  if (User.signedIn()) {
 			    var user = User.getCurrent();
@@ -92,26 +107,7 @@ app.factory('Topic',
 			  	window.alert('You Must Be Signed In To Vote');
 			  }
 			},
-			downVote: function (topicId) {
-			  if (User.signedIn()) {
-			    var user = User.getCurrent();
-			    var topic = topics.$child(topicId);
-			 
-			    topic.$child('downvotes').$child(user.username).$set(user.username).then(function () {
-			        user.$child('downvotes').$child(topicId).$set(topicId);
-			        topic.$child('upvotes').$remove(user.username);
-			        user.$child('upvotes').$remove(topicId);
-			 
-			        topic.$child('score').$transaction(function (score) {
-			          if (score === undefined || score === null) {
-			            return -1;
-			          }
-			 
-			          return score - 1;
-			        });
-			      });
-			  }
-			},
+			
 			clearVote: function (topicId, upVoted) {
 			  if (User.signedIn()) {
 			    var user = User.getCurrent();
@@ -134,11 +130,6 @@ app.factory('Topic',
 			upVoted: function (topic) {
 			  if (User.signedIn() && topic.upvotes) {
 			    return topic.upvotes.hasOwnProperty(User.getCurrent().username);
-			  }
-			},
-			downVoted: function (topic) {
-			  if (User.signedIn() && topic.downvotes) {
-			    return topic.downvotes.hasOwnProperty(User.getCurrent().username);
 			  }
 			}
 

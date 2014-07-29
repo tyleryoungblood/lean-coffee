@@ -20,7 +20,7 @@ function countDown(time, elementId) {
 	if(time < 1) {
 		//clearTimeout(timer);
 		document.body.style.backgroundColor='red';
-		element.innerHTML = 'Time has expired. <button onclick="countDown(5, \'status\')">Restart?</button>';
+		element.innerHTML = '<button onclick="countDown(5, \'status\')"><i class="fa fa-refresh"></i></button> Continue? &nbsp;<button><i class="fa fa-smile-o"> 0</i></button>&nbsp;<button><i class="fa fa-meh-o"> 0</i></button>&nbsp;<button><i class="fa fa-frown-o"> 0</i></button>';
 	} else {
 		time--;
 		timer = setTimeout('countDown(' + time + ', "' + elementId + '")', 1000);

@@ -5,7 +5,7 @@ app.controller('TopicsCtrl', function ($scope, $location, Topic) {
 		$scope.topics = Topic.all;
 	}
 
-	$scope.topic = {title: 'Topic Title', description: 'Description'};
+	$scope.topic = {title: 'Topic Title', description: 'Description', category: 'Cagetory"'};
 
 	$scope.deleteTopic = function (topicId) {
 		Topic.delete(topicId);
@@ -19,20 +19,12 @@ app.controller('TopicsCtrl', function ($scope, $location, Topic) {
 	  }
 	};
 	 
-	$scope.downVoteTopic = function (topicId, downVoted) {
-	  if (downVoted) {
-	    Topic.clearVote(topicId, !downVoted);
-	  } else {
-	    Topic.downVote(topicId);
-	  }
-	};
-	 
 	$scope.upVoted = function (topic) {
 	  return Topic.upVoted(topic);
 	};
-	 
-	$scope.downVoted = function (topic) {
-	  return Topic.downVoted(topic);
+
+	$scope.moveToDiscussing = function (topicId) {
+		return Topic.moveToDiscussing(topicId);
 	};
 
 });
