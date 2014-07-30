@@ -24,9 +24,9 @@
 
     </div>
 
-    <div class="right"><button ng-click="moveToDiscussing(topic.$id)" ng-show="signedIn()"><i class="fa fa-arrow-right"></i> <i class="fa fa-lightbulb-o"></i></button> </div>
+    <div class="right"><button title='Move topic to "To Discuss"' ng-click="moveToDiscuss(topic.$id)" ng-show="signedIn()"><i class="fa fa-arrow-right"></i> <i class="fa fa-lightbulb-o"></i></button> </div>
 
-    <div class="right"><button ng-click="deleteTopic(topic.$id)" 
+    <div class="right"><button title="Delete topic" ng-click="deleteTopic(topic.$id)" 
             ng-show="signedIn() && topic.owner === currentUser.username">
                 <i class="ionicons ion-trash-b"></i></button>&nbsp;
     </div>

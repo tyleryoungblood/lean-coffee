@@ -48,19 +48,24 @@ app.factory('Topic',
 
 			moveToDiscussing: function(topicId) {
 				var topic = topics.$child(topicId); // or the method below?
-				topic.set({
+				console.log(topic);
+				topic.$set({
 					'category':'discussing'
 				});
 			},
 
 			moveToDiscussed: function(topicId) {
-				var topic = Topic.find(topicId);
-				topic.category = 'discussed';
+				var topic = topics.$child(topicId);
+				topic.$set({
+					'category':'discussed'
+				})
 			},
 
 			moveToDiscuss: function(topicId) {
-				var topic = Topic.find(topicId);
-				topic.category = 'toDiscuss';
+				var topic = topics.$child(topicId);
+				topic.$set({
+					'category':'toDiscuss'
+				})
 			},
 
 			addComment: function (topicId, comment) {

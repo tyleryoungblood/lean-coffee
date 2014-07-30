@@ -11,7 +11,7 @@ app.controller('NavCtrl', function($scope, $location, Topic, Auth) {
 
 	$scope.topics = Topic.all;
 
-	$scope.topic = {title: '', description: '', category: 'toDiscuss'};
+	$scope.topic = {title: '', description: '', category: ''};
 
 	$scope.submitTopic = function () {
 		Topic.create($scope.topic).then(function (){
