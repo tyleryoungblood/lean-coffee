@@ -27,4 +27,13 @@ app.controller('TopicsCtrl', function ($scope, $location, Topic) {
 	  Topic.moveToDiscussing(topicId);
 	};
 
+	$scope.moveToDiscussed = function (topicId) {
+	  Topic.moveToDiscussed(topicId);
+	};
+
+	$scope.moveToDiscuss = function (topicId) {
+	  Topic.moveToDiscuss(topicId);
+	};
+
+
 });
