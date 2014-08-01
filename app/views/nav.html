@@ -40,4 +40,7 @@
 </nav>
 
 <!-- create a <- Back to Home link on every page (except home page) -->
-<p ng-hide="currentPath == '/'" class="container"><a href="#topics">&larr; Back to Home</a></p><br> <!-- currentPath comes from app.js -->
+<div ng-hide="location.hash =='#/'">asdfas</div><p ng-hide="location.hash =='#/'"><a href="#topics">&larr; Back to Home</a></p><br> <!-- currentPath comes from app.js -->
+
+<script>console.log('hash: '+location.hash);</script>
+<script>console.log(showBackToHomeLink);</script>

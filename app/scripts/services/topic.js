@@ -58,14 +58,14 @@ app.factory('Topic',
 				var topic = topics.$child(topicId);
 				topic.$update({
 					'category':'discussed'
-				})
+				});
 			},
 
 			moveToDiscuss: function(topicId) {
 				var topic = topics.$child(topicId);
 				topic.$update({
 					'category':'toDiscuss'
-				})
+				});
 			},
 
 			addComment: function (topicId, comment) {

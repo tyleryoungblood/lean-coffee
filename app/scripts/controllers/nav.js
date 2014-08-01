@@ -7,7 +7,24 @@ app.controller('NavCtrl', function($scope, $location, Topic, Auth) {
 		Auth.logout();
 	};
 
-	//$scope.currentPath = $location.path(); //store the URL so I can hide back link in nav.html when on home page
+	$scope.currentPath = $location.path(); //store the URL so I can hide back link in nav.html when on home page
+	console.log('$location.path(): ' + $location.path());
+	console.log('$scope.currentPath: ' + $scope.currentPath);
+	
+
+	$scope.checkHome = function() {
+		if(location.hash === '#/') {
+			return true;
+		} else {
+			return false;
+		}
+	};
+
+	var checkHome = false;
+
+	console.log('before');
+	console.log($scope.checkHome());
+	console.log('after');
 
 	$scope.topics = Topic.all;
 

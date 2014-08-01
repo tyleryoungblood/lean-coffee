@@ -69,3 +69,7 @@ app.config(function ($routeProvider) {
         redirectTo: '/'
       });
   });
+
+  app.controller('routeController', ['$scope', '$location', function($scope, $location) {
+    $scope.showBackToHomeLink = $location.path() ==='/';
+  }]);
